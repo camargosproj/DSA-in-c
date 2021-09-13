@@ -46,7 +46,7 @@ bool push(stack *stack, int newItem){
 
 }
 
-// Remove elemnets from stack
+// Remove elements from stack
 bool pop(stack *stack){
     if(isEmpty(stack)){
         printf("Stack is Empty!\n");
@@ -56,7 +56,20 @@ bool pop(stack *stack){
     stack->top--;
     count--;
 }
-
+//Reverse a Stack 
+stack* reverse(stack *new){
+    stack* temp = malloc(sizeof(stack));
+    if(isEmpty(new)){
+        printf("Stack is Empty!\n");
+        return false;
+    } 
+    for (int i = 0; i < count; i++)
+    {
+        temp->items[i] = new->items[new->top];
+        new->top--;
+    }   
+    return temp;
+}
 //Print elements of a stack
 void printStack(stack *stack){
     if(!isEmpty(stack)){
@@ -81,9 +94,10 @@ int main(){
     push(s, 4);
     push(s, 5);
   
-    
-    pop(s);
-    
     printStack(s);
+    stack *test = reverse(s);
+    
+    printStack(test);
+
     
 }
