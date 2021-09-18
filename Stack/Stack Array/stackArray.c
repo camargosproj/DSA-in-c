@@ -95,9 +95,9 @@ int main(){
     push(s, 5);
   
     printStack(s);
-    stack *test = reverse(s);
+    stack *reversed = reverse(s); // Reversing a stack
     
-    printStack(test);
+    printStack(reversed);
 
     
 }
